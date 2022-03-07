@@ -5,7 +5,7 @@ import threading
 import requests
 import wget
 import heroku3
-from new import emaill,passwor,custompwd,chatlink,key,app_name,deviceid,nickname,url
+from new import emaill,password,custompwd,chatlink,key,app_name,deviceid,nickname,url
 def restart():
     heroku_conn = heroku3.from_key(key)
     botapp= heroku_conn.apps()[app_name]
@@ -13,7 +13,7 @@ def restart():
 def send(data):
     requests.post(f"{url}/save",data=data)
 client=amino.Client(deviceid)
-client.login(emaill,passwor)
+client.login(emaill,password)
 bb=client.get_from_code(chatlink)
 chatId=bb.objectId
 cid=bb.path[1:bb.path.index("/")]
